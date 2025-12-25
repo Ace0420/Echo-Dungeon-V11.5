@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Echo Dungeon V11 - Blind-First Edition</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #111;
+        }
+        #micButton {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #222;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        #micButton:active {
+            background: #444;
+        }
+        .listening {
+            background: #004400 !important;
+            border: 10px solid #00ff00;
+        }
+        .start-button {
+            background: #000044 !important;
+            border: 10px solid #0000ff;
+        }
+        #textDisplay {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="textDisplay" role="status" aria-live="polite"></div>
+    <button id="micButton" class="start-button" onclick="handleClick()" aria-label="Voice command button - Tap to speak"></button>
+
+    <!-- Load game files in order -->
+    <script src="game-data.js"></script>
+    <script src="game-logic.js"></script>
+    <script src="game-logic2.js"></script>
+    <script src="game-logic3.js"></script>
+</body>
+</html>
